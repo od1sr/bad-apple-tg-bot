@@ -10,11 +10,6 @@ def get_color(color_key):
     return WHITE if color_key > 127.5 else BLACK
 def calc_average_color(color_stream):
         return  [[get_color(sum(i) / len(i)) for i in row ] for row in cv2.resize(color_stream, FRAME_SIZE)]
-def timer(time):
-    global stop_timer
-    stop_timer = False
-    sleep(time)
-    stop_timer = True
 bot = Bot('BOT:TOKEN')
 dp = Dispatcher(bot)
 chdir('/path/to/video')
